@@ -1,21 +1,26 @@
+/* Google Fonts - Noto Sans JP をインポート */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Noto Sans JP', Arial, sans-serif; /* Noto Sans JP を優先 */
   margin: 0;
   padding: 0;
   background-color: #fff;
-  display: flex; /* flexboxを使って子要素を配置 */
-  flex-direction: column; /* 子要素を縦方向に並べる */
-  min-height: 100vh; /* ビューポートの高さの最低値を設定し、コンテンツが短い場合でもフッターが下に伸びるようにする */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 16px; /* 基本の文字サイズを統一 */
+  color: #333; /* 基本の文字色 */
 }
 
 /* ハンバーガーメニューのスタイル */
 .hamburger {
-  position: fixed;
+  position: fixed; /* 元の固定位置に戻す */
   top: 20px;
   left: 20px;
   width: 30px;
   cursor: pointer;
-  z-index: 100; /* より高い値を設定し、確実に手前に表示 */
+  z-index: 100;
 }
 
 .hamburger span {
@@ -41,7 +46,7 @@ body {
   transform: translateX(-100%);
   padding: 20px;
   box-sizing: border-box;
-  z-index: 50; /* ヘッダーやハンバーガーよりは低くするが、通常のコンテンツよりは高くする */
+  z-index: 50;
 }
 
 /* メニューが開いたとき */
@@ -70,13 +75,13 @@ header {
   padding: 10px 20px 10px 80px; /* 左側にパディングを追加 (ハンバーガーメニューの幅+余白) */
   display: flex;
   align-items: center;
-  position: relative; /* z-indexを有効にするため */
-  z-index: 10; /* ヘッダーがメニューの下にならないように */
+  position: relative;
+  z-index: 10;
 }
 
 header h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 28px; /* 見出しの文字サイズを調整 */
   display: flex;
   align-items: center;
 }
@@ -90,48 +95,74 @@ header a {
   color: inherit;
 }
 
-main { /* mainタグを追加した場合は、flexboxで自動的に伸びるようにする */
+main {
   flex-grow: 1;
 }
 
 .container {
-  margin: 40px auto; /* 左右をautoにして中央寄せ、上下は40px */
-  max-width: 800px; /* 最大幅を設定してコンテンツが広がりすぎないように */
-  text-align: center;
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center; /* コンテナ内のインライン要素やインラインブロック要素を中央寄せ */
 }
 
+h1 { /* 全体のH1タグのスタイルを統一 */
+  font-size: 2em; /* bodyのfont-sizeに対する比率 */
+  margin-bottom: 20px;
+  color: #333;
+}
+h2 { /* H2タグのスタイルを統一 */
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #333;
+}
+p { /* 段落の文字サイズを統一 */
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+
 .form {
-  display: inline-block;
+  display: inline-block; /* フォーム自体を中央に配置するために必要 */
   width: 300px;
-  text-align: left;
   margin-top: 20px;
 }
 
 .form input[type="email"],
 .form input[type="text"],
-.form button,
-.form input[type="date"],
-.form label {
+.form input[type="date"] { /* ここにまとめてスタイルを適用 */
   width: 100%;
-  padding: 10px;
+  padding: 12px 10px; /* パディングを少し増やす */
   margin-top: 10px;
-  font-size: 16px;
+  margin-bottom: 15px; /* ここで下側の余白を追加 */
+  font-size: 1em; /* 文字サイズを統一 */
   box-sizing: border-box;
-}
-
-.form input[type="email"],
-.form input[type="text"],
-.form input[type="date"] {
   border: 1px solid #ccc;
   border-radius: 5px;
-  height: 40px;
-  padding: 5px 10px;
+  height: 48px; /* 高さを少し調整 */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* ホバー・フォーカス時のトランジション */
+}
+
+.form input[type="email"]:hover,
+.form input[type="text"]:hover,
+.form input[type="date"]:hover {
+  border-color: #888; /* ホバーでボーダーの色を変更 */
+}
+
+.form input[type="email"]:focus,
+.form input[type="text"]:focus,
+.form input[type="date"]:focus {
+  outline: none; /* デフォルトのアウトラインを削除 */
+  border-color: #007bff; /* フォーカス時にボーダーの色を変更 */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* フォーカス時に影を追加 */
 }
 
 .form label {
   padding: 5px 0;
   display: block;
   font-weight: bold;
+  font-size: 0.9em; /* ラベルは少し小さめ */
+  margin-top: 10px; /* ラベルの上余白 */
+  margin-bottom: 5px; /* ラベルの下余白 */
 }
 
 .form input[type="text"]::placeholder {
@@ -144,18 +175,24 @@ main { /* mainタグを追加した場合は、flexboxで自動的に伸びる�
   background-color: #000;
   color: white;
   cursor: pointer;
-  height: 50px;
+  height: 55px; /* ボタンの高さを調整 */
   padding: 0 10px;
+  font-size: 1.1em; /* ボタンの文字サイズを統一 */
+  margin-top: 25px; /* ここでボタンの上側に余白を追加して、入力欄と離す */
+  transition: background-color 0.3s ease; /* ホバーエフェクトの統一 */
 }
 
-.form button:hover {
+/* 共通のボタンホバーエフェクト */
+.btn:hover,
+.item button:hover {
   background-color: #333;
 }
+
 
 .notice {
   text-align: center;
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 0.9em; /* 注意書きは少し小さめ */
   color: #555;
 }
 
@@ -168,7 +205,7 @@ main { /* mainタグを追加した場合は、flexboxで自動的に伸びる�
 }
 
 .item .title {
-  font-size: 18px;
+  font-size: 1.2em; /* 機器名の文字サイズを統一 */
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -180,22 +217,29 @@ main { /* mainタグを追加した場合は、flexboxで自動的に伸びる�
   display: block;
 }
 
-/* 選択ボタンのスタイル（修正済み） */
+/* 選択ボタンのスタイル（既存のスタイルにホバーを追加） */
 .item button {
   padding: 15px 30px;
-  font-size: 18px;
+  font-size: 1.1em; /* ボタンの文字サイズを統一 */
   width: auto;
   margin-top: 15px;
   border-radius: 8px;
+  background-color: #000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
 
 /* フッターのスタイル */
 footer {
-  background-color: #000; /* 背景を黒に */
-  color: #fff; /* 文字を白に */
+  background-color: #000;
+  color: #fff;
   text-align: center;
   padding: 20px;
-  margin-top: auto; /* コンテンツが少ない場合でもフッターを下に固定 */
-  width: 100%; /* 幅を100%に設定 */
-  box-sizing: border-box; /* paddingを含めて幅を計算 */
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.85em; /* フッターの文字サイズを調整 */
 }

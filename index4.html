@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>予約情報入力</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="images/icon.png"> </head>
+  <link rel="icon" href="images/icon.png">
+</head>
 <body>
 
   <header>
@@ -16,8 +17,7 @@
     </h1>
   </header>
 
-  <div class="hamburger">
-    <span></span>
+  <div class="hamburger"> <span></span>
     <span></span>
     <span></span>
   </div>
@@ -34,8 +34,11 @@
 
   <div class="container">
     <h2>予約情報の入力</h2>
-    <p id="selected-item-display"></p> <div class="form">
-      <form onsubmit="completeReservation(event)"> <label for="user-name">名前:</label>
+    <p id="selected-item-display"></p>
+
+    <div class="form">
+      <form onsubmit="completeReservation(event)">
+        <label for="user-name">名前:</label>
         <input type="text" id="user-name" name="name" placeholder="氏名を入力してください" required />
 
         <label for="student-id">学籍番号:</label>
@@ -44,9 +47,10 @@
         <label for="start-date">貸出開始日:</label>
         <input type="date" id="start-date" name="startDate" required />
 
-        <label for="end-date">返却予定日:</label><br> <input type="date" id="end-date" name="endDate" required />
+        <label for="end-date">返却予定日:</label><br>
+        <input type="date" id="end-date" name="endDate" required />
 
-        <button class="btn" type="submit">この内容で予約する</button>
+        <button class="btn" type="submit">予約内容確認へ</button>
       </form>
     </div>
   </div>
@@ -54,7 +58,6 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="script.js"></script>
   <script>
-    // URLパラメータから選択された機器名を取得し表示するJavaScript
     $(function() {
         const urlParams = new URLSearchParams(window.location.search);
         const selectedItem = urlParams.get('item');
@@ -69,17 +72,14 @@
         }
     });
 
-    // 予約完了処理の関数
     function completeReservation(event) {
-      event.preventDefault(); // フォームの通常の送信（ページ遷移）をキャンセル
+      event.preventDefault();
 
-      // フォームの入力値を取得
       const name = document.getElementById('user-name').value;
       const studentId = document.getElementById('student-id').value;
       const startDate = document.getElementById('start-date').value;
       const endDate = document.getElementById('end-date').value;
 
-      // 確認メッセージを表示
       alert('予約が完了しました。\n\n' +
             '名前: ' + name + '\n' +
             '学籍番号: ' + studentId + '\n' +
@@ -87,7 +87,6 @@
             '返却予定日: ' + endDate + '\n\n' +
             'ご確認後、OKボタンで戻ります。');
 
-      // 確認後、index3.htmlに戻る
       window.location.href = 'index3.html';
     }
   </script>
