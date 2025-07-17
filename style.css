@@ -1,0 +1,162 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+/* ハンバーガーメニューのスタイル */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  cursor: pointer;
+  z-index: 100; /* より高い値を設定し、確実に手前に表示 */
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* メニューのスタイル */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #d4f4dd;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateX(-100%);
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 50; /* ヘッダーやハンバーガーよりは低くするが、通常のコンテンツよりは高くする */
+}
+
+/* メニューが開いたとき */
+.menu.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* バツ印に変わるハンバーガーボタン */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* 既存のレイアウトスタイル */
+header {
+  background-color: #d4f4dd;
+  padding: 10px 20px 10px 80px; /* 左側にパディングを追加 (ハンバーガーメニューの幅+余白) */
+  display: flex;
+  align-items: center;
+  position: relative; /* z-indexを有効にするため */
+  z-index: 10; /* ヘッダーがメニューの下にならないように */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  margin-right: 10px;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  margin: 40px;
+  text-align: center;
+}
+
+.form {
+  display: inline-block;
+  width: 300px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.form input[type="email"],
+.form input[type="text"],
+.form button {
+  width: 100%;
+  padding: 10px;
+  height: 50px;
+  margin-top: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.form input[type="email"],
+.form input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form input[type="text"]::placeholder {
+  color: #888;
+}
+
+.form button {
+  border: none;
+  border-radius: 5px;
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #333;
+}
+
+.notice {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* index3固有のスタイル */
+.item {
+  display: inline-block;
+  margin: 20px;
+  text-align: center;
+  width: 200px;
+}
+
+.item .title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.item img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
