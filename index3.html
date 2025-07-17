@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>機器選択</title>
   <link rel="stylesheet" href="style.css">
-</head>
+  <link rel="icon" href="images/icon.png"> </head>
 <body>
 
   <header>
@@ -24,8 +24,8 @@
 
   <nav class="menu">
     <ul>
-      <li><a href="#">xxx</a></li>
-      <li><a href="#">xxx</a></li>
+      <li><a href="index.html">トップ</a></li>
+      <li><a href="https://www.reitaku-u.ac.jp/" target="_blank">麗澤大学HP</a></li>
       <li><a href="#">xxx</a></li>
       <li><a href="#">xxx</a></li>
       <li><a href="#">xxx</a></li>
@@ -38,18 +38,21 @@
     <div class="item">
       <div class="title">VR機器</div>
       <img src="images/IMG_9117.jpg" alt="VR">
-      <button onclick="alert('VRを選択しました')">選択</button>
+      <button onclick="location.href='index4.html?item=vr'">選択</button>
     </div>
 
     <div class="item">
       <div class="title">3Dプリンター</div>
       <img src="images/IMG_9120.jpg" alt="3D">
-      <button onclick="alert('3Dプリンターを選択しました')">選択</button>
+      <button onclick="location.href='index4.html?item=3dprinter'">選択</button>
     </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="script.js"></script>
 
+  <footer>
+    <p>&copy; 2025 Reitaku University InRes. All rights reserved.</p>
+  </footer>
 </body>
 </html>
