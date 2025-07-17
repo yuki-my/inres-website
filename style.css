@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-size: 18px; /* ★基本の文字サイズを18pxに拡大★ */
+  font-size: 18px; /* 基本の文字サイズを18pxに拡大 */
   color: #333; /* 基本の文字色 */
 }
 
@@ -81,7 +81,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 32px; /* ★ヘッダーのH1をさらに拡大★ */
+  font-size: 32px; /* ヘッダーのH1をさらに拡大 */
   display: flex;
   align-items: center;
 }
@@ -100,69 +100,72 @@ main {
 }
 
 .container {
-  margin: 40px auto;
+  margin: 30px auto; /* ★上側のマージンを減らして、コンテンツを少し上に移動★ */
   max-width: 800px;
-  text-align: center; /* コンテナ内のインライン要素やインラインブロック要素を中央寄せ */
+  text-align: center;
 }
 
+
 h1 { /* 全体のH1タグのスタイルを統一 */
-  font-size: 2.2em; /* ★bodyのfont-sizeに対する比率を拡大★ */
-  margin-bottom: 25px; /* マージンも少し広げる */
+  font-size: 2.2em; /* bodyのfont-sizeに対する比率を拡大 */
+  margin-bottom: 20px; /* ★マージンを少し減らす★ */
   color: #333;
 }
 h2 { /* H2タグのスタイルを統一 */
-  font-size: 1.9em; /* ★H2を拡大★ */
-  margin-bottom: 25px; /* マージンも少し広げる */
+  font-size: 2em; /* H2をさらに拡大（index4の「予約が完了しました！」など） */
+  margin-bottom: 25px; /* ★マージンを少し減らす★ */
   color: #333;
 }
 p { /* 段落の文字サイズを統一 */
-  font-size: 1em; /* bodyのfont-size (18px) を基準にする */
-  line-height: 1.7; /* 行の高さを少し広げ読みやすく */
+  font-size: 1.1em; /* pタグの文字サイズを少し拡大（index4の予約詳細など） */
+  line-height: 1.5; /* 行の高さを1.5に調整して狭める */
+  margin-top: 5px; /* ★段落の上マージンをさらに調整★ */
+  margin-bottom: 5px; /* ★段落の下マージンをさらに調整★ */
 }
 
 
 .form {
   display: inline-block; /* フォーム自体を中央に配置するために必要 */
-  width: 350px; /* ★フォームの幅を少し広げる★ */
-  margin-top: 30px; /* マージンも少し広げる */
+  width: 350px; /* フォームの幅を少し広げる */
+  margin-top: 20px; /* ★フォーム全体の上マージンを減らす★ */
 }
 
 .form input[type="email"],
 .form input[type="text"],
-.form input[type="date"] { /* ここにまとめてスタイルを適用 */
+.form input[type="date"] {
   width: 100%;
-  padding: 14px 12px; /* ★パディングをさらに増やす★ */
-  margin-top: 15px; /* ★入力欄間のマージンを調整★ */
-  margin-bottom: 20px; /* ★入力欄と次の要素の間隔を広げる★ */
-  font-size: 1.1em; /* ★入力欄の文字サイズを拡大★ */
+  padding: 12px 10px; /* ★パディングを少し減らす（高さを調整）★ */
+  margin-top: 10px; /* ★入力欄間のマージンを減らす★ */
+  margin-bottom: 15px; /* ★入力欄と次の要素の間隔を減らす★ */
+  font-size: 1.1em;
   box-sizing: border-box;
   border: 1px solid #ccc;
-  border-radius: 6px; /* ★角の丸みを少し増やす★ */
-  height: 55px; /* ★高さをさらに調整★ */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* ホバー・フォーカス時のトランジション */
+  border-radius: 6px;
+  height: 50px; /* ★高さを調整★ */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form input[type="email"]:hover,
 .form input[type="text"]:hover,
 .form input[type="date"]:hover {
-  border-color: #888; /* ホバーでボーダーの色を変更 */
+  border-color: #888;
 }
 
 .form input[type="email"]:focus,
 .form input[type="text"]:focus,
 .form input[type="date"]:focus {
-  outline: none; /* デフォルトのアウトラインを削除 */
-  border-color: #007bff; /* フォーカス時にボーダーの色を変更 */
-  box-shadow: 0 0 6px rgba(0, 123, 255, 0.6); /* ★影を少し大きく強くする★ */
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.6);
 }
 
 .form label {
   padding: 5px 0;
   display: block;
   font-weight: bold;
-  font-size: 1em; /* ★ラベルの文字サイズを調整（基本の文字サイズと同じくらいに）★ */
-  margin-top: 20px; /* ★ラベルの上余白を調整★ */
-  margin-bottom: 8px; /* ★ラベルの下余白を調整★ */
+  font-size: 1em;
+  margin-top: 15px; /* ★ラベルの上余白を調整★ */
+  margin-bottom: 5px; /* ★ラベルの下余白を調整★ */
 }
 
 /* 最初のラベルには上余白を適用しない（見た目の調整） */
@@ -177,15 +180,15 @@ p { /* 段落の文字サイズを統一 */
 
 .form button {
   border: none;
-  border-radius: 8px; /* ★ボタンの角の丸みを少し増やす★ */
+  border-radius: 8px;
   background-color: #000;
   color: white;
   cursor: pointer;
-  height: 60px; /* ★ボタンの高さをさらに調整★ */
-  padding: 0 25px; /* ★左右パディングを増やす★ */
-  font-size: 1.2em; /* ★ボタンの文字サイズをさらに拡大★ */
-  margin-top: 40px; /* ★ボタンの上側に十分な余白を追加★ */
-  transition: background-color 0.3s ease; /* ホバーエフェクトの統一 */
+  height: 55px; /* ★ボタンの高さを調整★ */
+  padding: 0 25px;
+  font-size: 1.2em;
+  margin-top: 30px; /* ★ボタンの上側に余白を減らす★ */
+  transition: background-color 0.3s ease;
   width: 100%; /* ボタンもフォームの幅に合わせる */
 }
 
@@ -198,47 +201,47 @@ p { /* 段落の文字サイズを統一 */
 
 .notice {
   text-align: center;
-  margin-top: 30px; /* ★注意書きの上余白を調整★ */
-  font-size: 0.9em; /* 注意書きは基本の文字サイズに対する比率 */
+  margin-top: 20px; /* ★注意書きの上マージンを減らす★ */
+  font-size: 0.9em;
   color: #555;
 }
 
 /* index3固有のスタイル */
 .item {
   display: inline-block;
-  margin: 30px; /* ★アイテム間のマージンを少し広げる★ */
+  margin: 25px; /* ★アイテム間のマージンを少し狭める★ */
   text-align: center;
-  width: 250px; /* ★アイテム（画像やボタン含むブロック）の幅を広げる★ */
+  width: 250px;
 }
 
 .item .title {
-  font-size: 1.3em; /* ★機器名の文字サイズを拡大★ */
+  font-size: 1.3em;
   font-weight: bold;
-  margin-bottom: 15px; /* マージンを調整 */
+  margin-bottom: 10px; /* ★機器名のマージンを調整★ */
 }
 
 .item img {
-  width: 250px; /* ★画像の幅を広げる★ */
-  height: 350px; /* ★画像の高さを調整★ */
+  width: 250px;
+  height: 350px;
   object-fit: cover;
   display: block;
-  margin: 0 auto; /* 画像を中央に配置 */
-  border-radius: 8px; /* ★画像の角を少し丸くする★ */
+  margin: 0 auto;
+  border-radius: 8px;
 }
 
 /* 選択ボタンのスタイル（既存のスタイルにホバーを追加） */
 .item button {
-  padding: 18px 35px; /* ★パディングをさらに増やす★ */
-  font-size: 1.2em; /* ★ボタンの文字サイズをさらに拡大★ */
-  width: 100%; /* ★親要素の幅に合わせる★ */
-  margin-top: 25px; /* ★ボタンの上余白を調整★ */
+  padding: 15px 30px; /* ★パディングを調整★ */
+  font-size: 1.2em;
+  width: 100%;
+  margin-top: 20px; /* ★ボタンの上余白を調整★ */
   border-radius: 8px;
   background-color: #000;
   color: white;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  height: 60px; /* ★ボタンの高さを調整★ */
+  height: 55px; /* ★ボタンの高さを調整★ */
 }
 
 
@@ -247,9 +250,9 @@ footer {
   background-color: #000;
   color: #fff;
   text-align: center;
-  padding: 25px; /* ★フッターのパディングを増やす★ */
+  padding: 20px; /* ★フッターのパディングを減らす★ */
   margin-top: auto;
   width: 100%;
   box-sizing: border-box;
-  font-size: 0.9em; /* フッターの文字サイズを調整（基本の文字サイズに対する比率） */
+  font-size: 0.9em;
 }
